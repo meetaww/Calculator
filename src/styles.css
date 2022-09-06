@@ -1,0 +1,58 @@
+*, *::before, *::after{
+     box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(to right, #d8270f, #d4d456);
+}
+
+.calculator-grid{
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); 
+    justify-content: center;
+    /* repeat is used to repeat the same thing over a;ll the other rows and coloums present but if we dont do it, it will only apply to the first row and coloumn */
+
+}
+
+.calculator-grid > button{
+    /* this covers each button inside the calculator grid */
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgb(255, 255, 255, .75);
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;  /*this is dont to space the elememnts as much as possible to avoid clumsiness*/
+    padding: .75rem;
+    word-wrap: break-word ;
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: rgb(236, 222, 222, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: rgba(255, 255, 255);
+    font-size: 2.5rem;
+}
